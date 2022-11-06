@@ -1,5 +1,5 @@
 {
-	"name": "Codespace Default",
+	"name": "Codespace LaTeX",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
