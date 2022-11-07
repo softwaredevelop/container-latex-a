@@ -8,12 +8,14 @@ on:
     paths:
       - ".devcontainer/Dockerfile.*"
       - ".devcontainer/Dockerfile"
+      - "Dockerfile"
   pull_request:
     branches:
       - "main"
     paths:
       - ".devcontainer/Dockerfile.*"
       - ".devcontainer/Dockerfile"
+      - "Dockerfile"
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
@@ -65,6 +67,18 @@ jobs:
         uses: hadolint/hadolint-action@v2.1.0
         with:
           dockerfile: .devcontainer/Dockerfile.alpine
+
+  run-lint-latex:
+    name: Hadolint Action LaTeX
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Hadolint
+        uses: hadolint/hadolint-action@v2.1.0
+        with:
+          dockerfile: .Dockerfile
 
   trivy-scan:
     name: Trivy
