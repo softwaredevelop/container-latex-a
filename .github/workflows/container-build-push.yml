@@ -3,7 +3,7 @@ name: Container Build & Push
 
 on:
   workflow_run:
-    workflows: [Dockerfile Linter]
+    workflows: [Super-Linter, Dockerfile-Linter]
     types: [completed]
 
 concurrency:
