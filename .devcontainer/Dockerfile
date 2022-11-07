@@ -17,7 +17,7 @@ RUN \
     bash /tmp/scripts/shellcheck.sh "0.8.0" "debian"; \
     bash /tmp/scripts/editorconfig.sh "2.6.0" "debian"; \
     bash /tmp/scripts/trivy.sh "0.34.0" "debian"; \
-    bash /tmp/scripts/latex.sh "debian"; \
+    bash /tmp/scripts/latex-debian.sh; \
     apt-get autoremove; \
     apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/scripts
