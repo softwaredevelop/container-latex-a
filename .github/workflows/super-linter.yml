@@ -8,12 +8,14 @@ on:
     paths-ignore:
       - ".devcontainer/Dockerfile.*"
       - ".devcontainer/Dockerfile"
+      - "Dockerfile"
   pull_request:
     branches:
       - "main"
     paths-ignore:
       - ".devcontainer/Dockerfile.*"
       - ".devcontainer/Dockerfile"
+      - "Dockerfile"
 
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
